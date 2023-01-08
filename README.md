@@ -24,6 +24,6 @@ Our mission is typically to provide information and tools to help people assess 
 - Alkaline phosphatase- 30 to 130 units per liter (U/L).
 - Total proteins- 6.0 to 8.3 grams per deciliter (g/dL). 
 - Albumin- 3.4- 5.4
-- Albumin globulin ratio- 1.0- 2.5
+- Albumin globulin ratio-1.0- 2.5
 
 
