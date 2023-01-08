@@ -1,5 +1,7 @@
 # Dr. Health
 
+![](https://github.com/Chiranshu603/Shadow/blob/main/logo.jpg)
+
 
 <h2>Our Mission</h2>
 Our mission is typically to provide information and tools to help people assess their risk of developing various health conditions and to encourage them to take steps to maintain and improve their health. This may involve providing information about risk factors for different diseases, conducting assessments based on the user's inputs, and providing personalized recommendations for lifestyle changes or medical interventions that can help reduce the risk of developing a particular condition.
@@ -14,7 +16,7 @@ Our mission is typically to provide information and tools to help people assess 
 - Run "pip install -r requirements.txt" in command terminal and wait for the process to finish.
 - Open the folder in VS Code and run "python app.py" in terminal.
 - The pyhton app will be run in the default browser(preferred chrome)
-- Reference the youtube video(<a target="_blank" href="https://youtu.be/u2nNTIMqJbI">here</a>) for further navigation in the project.
+- Reference the youtube video (<a target="_blank" href="https://youtu.be/u2nNTIMqJbI">here</a>) for further navigation in the project.
 
 
 
@@ -24,6 +26,6 @@ Our mission is typically to provide information and tools to help people assess 
 - Alkaline phosphatase- 30 to 130 units per liter (U/L).
 - Total proteins- 6.0 to 8.3 grams per deciliter (g/dL). 
 - Albumin- 3.4- 5.4
-- Albumin globulin ratio- 1.0- 2.5
+- Albumin globulin ratio-1.0- 2.5
 
 
