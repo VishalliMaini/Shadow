@@ -14,7 +14,7 @@ Our mission is typically to provide information and tools to help people assess 
 - Run "pip install -r requirements.txt" in command terminal and wait for the process to finish.
 - Open the folder in VS Code and run "python app.py" in terminal.
 - The pyhton app will be run in the default browser(preferred chrome)
-- Reference the youtube video(<a target="_blank" href="https://youtu.be/u2nNTIMqJbI"</a>) for further navigation in the project.
+- Reference the youtube video(<a target="_blank" href="https://youtu.be/u2nNTIMqJbI"></a>) for further navigation in the project.
 
 
 
