@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../static/img/health.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #intro {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .custom-shape-divider-bottom-1672253138 {
+            /* position: absolute; */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .custom-shape-divider-bottom-1672253138 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 58px;
+        }
+
+        .custom-shape-divider-bottom-1672253138 .shape-fill {
+            fill: #212529;
+        }
+    </style>
+    <title>Liver Disease Prediction</title>
+</head>
+
+<body>
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3">
+            <div class="container-fluid">
+                <img src="{{url_for('static', filename='logo5.png')}}" alt="" class="mx-2" width="40px">
+                <a class="navbar-brand" href="/">DR. Health</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="result-container" style="min-height: 75vh;">
+        <div class="container my-4 text-center text-capitalize">
+            <div class="heading-container">
+                <h1>Liver cancer Detection Result</h1>
+                <img src="{{url_for('static', filename='Liver-photo-2.cms')}}" class="my-4 rounded-4 img-fluid" width="70%" alt="">
+            </div>
+            <h1 class="text-info my-5 text-decoration-underline"> {{ prediction_text }}</h1>
+        </div>
+    </div>
+    <div class="my-5"></div>
+    <!-- footer-->
+    <div>
+        <div class="custom-shape-divider-bottom-1672253138">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="footer-container p-5 bg-dark text-white">
+            <div class="footer container text-center">
+                <div class="footer-info">
+                    <img src="{{url_for('static', filename='logo5.png')}}" class="img-fluid " alt="">
+                </div>
+                <p class="text-capitalize my-4">made with love by team shadow.</p>
+            </div>
+        </div>
+    </div>
+    <!--/.Mask-->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

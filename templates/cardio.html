@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr.Health</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <style>
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .main-form-container{
+            background-color: #A4E9F9;
+        }
+
+        .custom-shape-divider-bottom-1672253138 {
+            /* position: absolute; */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .custom-shape-divider-bottom-1672253138 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 58px;
+        }
+
+        .custom-shape-divider-bottom-1672253138 .shape-fill {
+            fill: #212529;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3">
+            <div class="container-fluid">
+                <img src="{{url_for('static', filename='logo3.png')}}" alt="" class="mx-2" width="40px">
+                <a class="navbar-brand" href="/">DR. Health</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container  rounded-5 p-5 my-5 main-form-container">
+        <div class="heading-container">
+            <h1 class="text-center my-4">Heart Disease Predictor</h1>
+            <p class="text-center">A Machine Learning Web Application that predicits chances of having heart Disease or
+                not, Built with Flask and Deployed using Heroku.<br>
+                <span class="text-danger">(Note:This model is 87.67% accurate)</span>
+                <div class="text-success-emphasis">
+                    Note: For this prediction you must require:-
+                    <ul>
+                        <li>Blood test reports</li>
+                        <li>Ecg report</li>
+                        <li>Lipid profile</li>
+                        <li>Blood pressure</li>
+                        <li>Sugartest</li>
+                        <li>Angiography</li>
+                    </ul>
+                </div>
+            </p>
+        </div>
+        <div class="form-container ml-container">
+            <form action="/p" class="justify-content-between" method="POST">
+                <div class="mb-3">
+                    <label for="age" class="col-form-label">Age</label>
+                    <input type="text" id="age" name="age" class="form-control" placeholder="Your age..">
+                </div>
+                <div class="mb-3">
+                    <label for="sex" class="form-label">Sex</label>
+                    <select id="sex" class="form-select" name="sex">
+                        <option selected>----select option----</option>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="cp" class="form-label">Chest Pain Type</label>
+                    <select id="cp" name="cp" class="form-select">
+                        <option selected>----select option----</option>
+                        <option value="0" data-toggle="tooltip" data-placement="true" data-html="true"
+                            title="It is often described as a of feeling pressure, tightness in the chest">Typical
+                            Angina</option>
+                        <option value="1" data-toggle="tooltip" data-placement="true" data-html="true"
+                            title="chest pain due to digestive  problem like acid reflux">Atypical Angina</option>
+                        <option value="2" data-toggle="tooltip" data-placement="true" data-html="true"
+                            title="Caused by muscle strains, arthritis">Non-anginal Pain</option>
+                        <option value="3" data-toggle="tooltip" data-placement="true" data-html="true"
+                            title="Chest pain due to nerve damage muscle strains or even emotional stress.">Asymtomatic
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="trestbps" class="form-label">Resting Blood Pressure</label>
+                    <input type="text" id="trestbps" name="trestbps" class="form-control"
+                        placeholder="A number in range [94-200] mmHg" data-toggle="tooltip" data-placement="true"
+                        data-html="true" title="Check from BP reports">
+                </div>
+                <div class="mb-3">
+                    <label for="chol" class="form-label">Serum Cholesterol</label>
+                    <input type="text" id="chol" name="chol" class="form-control"
+                        placeholder="A number in range [126-564] mg/dl" data-toggle="tooltip" data-html="true"
+                        data-placement="top" title="Its value you can check from lipid profile.">
+                </div>
+                <div class="mb-3">
+                    <label for="fbs" class="form-label">Fasting Blood Sugar</label>
+                    <select id="fbs" name="fbs" class="form-select">
+                        <option selected>----select option----</option>
+                        <option value="1">Greater than 120 mg/dl</option>
+                        <option value="0">Less than 120 mg/dl</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="restecg" class="form-label">Resting ECG Results</label>
+                    <select id="restecg" name="restecg" class="form-select" data-toggle="tooltip" data-placement="true"
+                        data-html="true" title="It can be checked from ECG report.">
+                        <option selected>----select option----</option>
+                        <option value="0">Normal</option>
+                        <option value="1">Having ST-T wave abnormality</option>
+                        <option value="2">Probable or definite left ventricular
+                            hypertrophy</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="thalach" class="form-label">Max Heart Rate </label>
+                    <input type="text" id="thalach" name="thalach" class="form-control"
+                        placeholder="A number in range [71-202] bpm">
+                </div>
+                <div class="mb-3">
+                    <label for="exang" class="form-label">Exercise-induced Angina</label>
+                    <select id="exang" name="exang" class="form-select">
+                        <option selected>----select option----</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="oldpeak" class="form-label">ST depression</label>
+                    <input type="text" id="oldpeak" name="oldpeak" class="form-control"
+                        placeholder="ST depression, typically in [0-6.2]" data-toggle="tooltip" data-placement="true"
+                        data-html="true" title="It can be checked from ECG report.">
+                </div>
+                <div class="mb-3" data-toggle="tooltip" data-placement="true" data-html="true"
+                    title="It can be checked from ECG report.">
+                    <label for="slope" class="form-label">slope of the peak exercise ST segment</label>
+                    <select id="slope" name="slope" class="form-select">
+                        <option selected>----select option----</option>
+                        <option value="0">Upsloping</option>
+                        <option value="1">Flat</option>
+                        <option value="2">Downsloping</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="ca" class="form-label">Number of Major vessels</label>
+                    <input type="text" id="ca" name="ca" class="form-control" placeholder="Typically in [0-4]"
+                        data-toggle="tooltip" data-placement="true" data-html="true"
+                        title="You can check this from Angiography report.">
+                </div>
+                <div class="mb-3">
+                    <label for="thal" class="form-label">Thalassemia</label>
+                    <select id="thal" name="thal" class="form-select" data-toggle="tooltip" data-placement="true"
+                        data-html="true" title="It can be checked from Blood report.">
+                        <option selected>----select option----</option>
+                        <option value="0">Normal</option>
+                        <option value="1">Fixed Defect</option>
+                        <option value="2">Reversible Defect</option>
+                    </select>
+                </div>
+                <div class="mb-3 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary my-4">Predict</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="custom-shape-divider-bottom-1672253138">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+        </svg>
+    </div>
+    <div class="footer-container p-5 bg-dark text-white">
+        <div class="footer container text-center">
+            <div class="footer-info">
+                <img src="{{url_for('static', filename='logo3.png')}}" class="img-fluid " alt="">
+            </div>
+            <p class="text-capitalize my-4">made with love by team shadow.</p>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</html>
